@@ -1,0 +1,22 @@
+:root {
+  color-scheme: dark;
+  --bg: #0a0e17;
+  --panel: #131a2a;
+  --accent: #f0c419;
+  --text: #e6e9f0;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+#app {
+  padding: 2rem;
+}
+
+h1 {
+  color: var(--accent);
+}
