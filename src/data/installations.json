@@ -1,1 +1,218 @@
-[]
+[
+  {
+    "id": "mining-facility",
+    "name": "Mining Facility",
+    "category": "resources",
+    "cost": 20,
+    "maintenanceCost": 0,
+    "buildTimeInTurns": 1,
+    "unlockedByResearch": null,
+    "isStartingInstallation": false,
+    "stats": {
+      "Bombardment": 5,
+      "Production Rate": 5,
+      "Research": 0
+    }
+  },
+  {
+    "id": "refinery",
+    "name": "Refinery",
+    "category": "resources",
+    "cost": 20,
+    "maintenanceCost": 0,
+    "buildTimeInTurns": 1,
+    "unlockedByResearch": null,
+    "isStartingInstallation": false,
+    "stats": {
+      "Bombardment": 2,
+      "Production Rate": 5,
+      "Research": 0
+    }
+  },
+  {
+    "id": "construction-facility",
+    "name": "Construction Facility",
+    "category": "production",
+    "cost": 10,
+    "maintenanceCost": 10,
+    "buildTimeInTurns": 1,
+    "unlockedByResearch": null,
+    "isStartingInstallation": false,
+    "stats": {
+      "Bombardment": 3,
+      "Production Rate": 4,
+      "Research": 0
+    }
+  },
+  {
+    "id": "advanced-construction-facility",
+    "name": "Advanced Construction Facility",
+    "category": "production",
+    "cost": 10,
+    "maintenanceCost": 10,
+    "buildTimeInTurns": 1,
+    "unlockedByResearch": null,
+    "isStartingInstallation": false,
+    "stats": {
+      "Bombardment": 4,
+      "Production Rate": 2,
+      "Research": 2
+    }
+  },
+  {
+    "id": "training-center",
+    "name": "Training Center",
+    "category": "production",
+    "cost": 10,
+    "maintenanceCost": 10,
+    "buildTimeInTurns": 1,
+    "unlockedByResearch": null,
+    "isStartingInstallation": false,
+    "stats": {
+      "Bombardment": 3,
+      "Production Rate": 4,
+      "Research": 0
+    }
+  },
+  {
+    "id": "advanced-training-center",
+    "name": "Advanced Training Center",
+    "category": "production",
+    "cost": 10,
+    "maintenanceCost": 10,
+    "buildTimeInTurns": 1,
+    "unlockedByResearch": null,
+    "isStartingInstallation": false,
+    "stats": {
+      "Bombardment": 4,
+      "Production Rate": 2,
+      "Research": 1
+    }
+  },
+  {
+    "id": "orbital-shipyard",
+    "name": "Orbital Shipyard",
+    "category": "production",
+    "cost": 20,
+    "maintenanceCost": 13,
+    "buildTimeInTurns": 1,
+    "unlockedByResearch": null,
+    "isStartingInstallation": false,
+    "stats": {
+      "Bombardment": 2,
+      "Production Rate": 4,
+      "Research": 0
+    }
+  },
+  {
+    "id": "advanced-orbital-shipyard",
+    "name": "Advanced Orbital Shipyard",
+    "category": "production",
+    "cost": 20,
+    "maintenanceCost": 20,
+    "buildTimeInTurns": 1,
+    "unlockedByResearch": null,
+    "isStartingInstallation": false,
+    "stats": {
+      "Bombardment": 2,
+      "Production Rate": 2,
+      "Research": 5
+    }
+  },
+  {
+    "id": "lnr-series-i",
+    "name": "LNR Series I",
+    "category": "defense",
+    "cost": 7,
+    "maintenanceCost": 7,
+    "buildTimeInTurns": 1,
+    "unlockedByResearch": null,
+    "isStartingInstallation": false,
+    "stats": {
+      "Bombardment": 4,
+      "Weapon Power": 800,
+      "Shield Strength": 0,
+      "Research": 0
+    }
+  },
+  {
+    "id": "lnr-series-ii",
+    "name": "LNR Series II",
+    "category": "defense",
+    "cost": 10,
+    "maintenanceCost": 4,
+    "buildTimeInTurns": 1,
+    "unlockedByResearch": null,
+    "isStartingInstallation": false,
+    "stats": {
+      "Bombardment": 3,
+      "Weapon Power": 5000,
+      "Shield Strength": 0,
+      "Research": 4
+    }
+  },
+  {
+    "id": "gencore-level-i",
+    "name": "GenCore Level I",
+    "category": "defense",
+    "cost": 12,
+    "maintenanceCost": 12,
+    "buildTimeInTurns": 1,
+    "unlockedByResearch": null,
+    "isStartingInstallation": false,
+    "stats": {
+      "Bombardment": 2,
+      "Weapon Power": 0,
+      "Shield Strength": 40,
+      "Research": 0
+    }
+  },
+  {
+    "id": "gencore-level-ii",
+    "name": "GenCore Level II",
+    "category": "defense",
+    "cost": 20,
+    "maintenanceCost": 7,
+    "buildTimeInTurns": 1,
+    "unlockedByResearch": null,
+    "isStartingInstallation": false,
+    "stats": {
+      "Bombardment": 3,
+      "Weapon Power": 0,
+      "Shield Strength": 80,
+      "Research": 6
+    }
+  },
+  {
+    "id": "kdy-150",
+    "name": "KDY-150",
+    "category": "defense",
+    "cost": 4,
+    "maintenanceCost": 4,
+    "buildTimeInTurns": 1,
+    "unlockedByResearch": null,
+    "isStartingInstallation": false,
+    "stats": {
+      "Bombardment": 5,
+      "Weapon Power": 2000,
+      "Shield Strength": 0,
+      "Research": 0
+    }
+  },
+  {
+    "id": "death-star-shield",
+    "name": "Death Star Shield",
+    "category": "defense",
+    "cost": 25,
+    "maintenanceCost": 20,
+    "buildTimeInTurns": 1,
+    "unlockedByResearch": null,
+    "isStartingInstallation": false,
+    "stats": {
+      "Bombardment": 1,
+      "Weapon Power": 0,
+      "Shield Strength": 0,
+      "Research": 3
+    }
+  }
+]

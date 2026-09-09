@@ -1,7 +1,13 @@
 [
   {
     "id": "20",
+    "name": "Mid Rim South",
     "type": "inner-rim",
+    "size": "huge",
+    "position": {
+      "x": 492,
+      "y": 604
+    },
     "systemIds": [
       "100",
       "101",
@@ -18,7 +24,13 @@
   },
   {
     "id": "21",
+    "name": "Outer Rim North",
     "type": "outer-rim",
+    "size": "huge",
+    "position": {
+      "x": 372,
+      "y": 67
+    },
     "systemIds": [
       "110",
       "111",
@@ -35,7 +47,13 @@
   },
   {
     "id": "22",
+    "name": "Outer Rim West",
     "type": "inner-rim",
+    "size": "standard",
+    "position": {
+      "x": 311,
+      "y": 631
+    },
     "systemIds": [
       "130",
       "131",
@@ -52,7 +70,13 @@
   },
   {
     "id": "23",
+    "name": "Deep Core",
     "type": "inner-rim",
+    "size": "standard",
+    "position": {
+      "x": 332,
+      "y": 412
+    },
     "systemIds": [
       "140",
       "141",
@@ -69,7 +93,13 @@
   },
   {
     "id": "24",
+    "name": "Mandalorian Space",
     "type": "inner-rim",
+    "size": "standard",
+    "position": {
+      "x": 508,
+      "y": 185
+    },
     "systemIds": [
       "120",
       "121",
@@ -86,7 +116,13 @@
   },
   {
     "id": "25",
+    "name": "Colonies",
     "type": "inner-rim",
+    "size": "huge",
+    "position": {
+      "x": 498,
+      "y": 336
+    },
     "systemIds": [
       "150",
       "151",
@@ -103,7 +139,13 @@
   },
   {
     "id": "26",
+    "name": "Outer Rim South",
     "type": "inner-rim",
+    "size": "standard",
+    "position": {
+      "x": 468,
+      "y": 736
+    },
     "systemIds": [
       "160",
       "161",
@@ -120,7 +162,13 @@
   },
   {
     "id": "27",
+    "name": "Core Worlds South",
     "type": "inner-rim",
+    "size": "huge",
+    "position": {
+      "x": 462,
+      "y": 444
+    },
     "systemIds": [
       "170",
       "171",
@@ -137,7 +185,13 @@
   },
   {
     "id": "28",
+    "name": "Outer Rim East",
     "type": "inner-rim",
+    "size": "large",
+    "position": {
+      "x": 757,
+      "y": 241
+    },
     "systemIds": [
       "180",
       "181",
@@ -154,7 +208,13 @@
   },
   {
     "id": "29",
+    "name": "Tingel Arm",
     "type": "inner-rim",
+    "size": "large",
+    "position": {
+      "x": 776,
+      "y": 138
+    },
     "systemIds": [
       "190",
       "191",
@@ -171,7 +231,13 @@
   },
   {
     "id": "30",
+    "name": "Hutt Space",
     "type": "outer-rim",
+    "size": "large",
+    "position": {
+      "x": 765,
+      "y": 364
+    },
     "systemIds": [
       "200",
       "201",
@@ -188,7 +254,13 @@
   },
   {
     "id": "31",
+    "name": "Western Reaches",
     "type": "inner-rim",
+    "size": "large",
+    "position": {
+      "x": 342,
+      "y": 734
+    },
     "systemIds": [
       "210",
       "211",
@@ -205,7 +277,13 @@
   },
   {
     "id": "32",
+    "name": "Crossroads",
     "type": "inner-rim",
+    "size": "standard",
+    "position": {
+      "x": 632,
+      "y": 314
+    },
     "systemIds": [
       "220",
       "221",
@@ -222,7 +300,13 @@
   },
   {
     "id": "33",
+    "name": "Mid Rim North",
     "type": "outer-rim",
+    "size": "standard",
+    "position": {
+      "x": 344,
+      "y": 173
+    },
     "systemIds": [
       "230",
       "231",
@@ -239,7 +323,13 @@
   },
   {
     "id": "34",
+    "name": "Bothan Space",
     "type": "outer-rim",
+    "size": "standard",
+    "position": {
+      "x": 741,
+      "y": 546
+    },
     "systemIds": [
       "240",
       "241",
@@ -256,7 +346,13 @@
   },
   {
     "id": "35",
+    "name": "Unknown Regions",
     "type": "outer-rim",
+    "size": "large",
+    "position": {
+      "x": 107,
+      "y": 356
+    },
     "systemIds": [
       "250",
       "251",
@@ -273,7 +369,13 @@
   },
   {
     "id": "36",
+    "name": "Core Worlds North",
     "type": "inner-rim",
+    "size": "standard",
+    "position": {
+      "x": 407,
+      "y": 308
+    },
     "systemIds": [
       "260",
       "261",
@@ -290,7 +392,13 @@
   },
   {
     "id": "37",
+    "name": "Inner Rim",
     "type": "inner-rim",
+    "size": "standard",
+    "position": {
+      "x": 574,
+      "y": 478
+    },
     "systemIds": [
       "270",
       "271",
@@ -307,7 +415,13 @@
   },
   {
     "id": "38",
+    "name": "Sith Worlds",
     "type": "outer-rim",
+    "size": "standard",
+    "position": {
+      "x": 666,
+      "y": 135
+    },
     "systemIds": [
       "280",
       "281",
@@ -324,7 +438,13 @@
   },
   {
     "id": "39",
+    "name": "Wild Space",
     "type": "outer-rim",
+    "size": "huge",
+    "position": {
+      "x": 661,
+      "y": 642
+    },
     "systemIds": [
       "290",
       "291",
