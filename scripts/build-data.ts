@@ -4,14 +4,19 @@ import {
   SectorListSchema,
   PlanetListSchema,
   CharacterListSchema,
-  UnitListSchema,
+  ShipListSchema,
+  TroopListSchema,
+  SpecialForceListSchema,
   InstallationListSchema,
   type Sector,
   type SectorSize,
   type Planet,
   type Character,
   type CharacterCapability,
-  type Unit,
+  type Ship,
+  type ShipCategory,
+  type Troop,
+  type SpecialForce,
   type Installation,
   type InstallationCategory,
 } from "../types/index.js";
@@ -88,52 +93,93 @@ function mapPlanets(rows: RawRow[]): Planet[] {
   }));
 }
 
-// --- units.csv -> Unit[] ---------------------------------------------------
+// --- capital-ships.csv + fighters.csv -> Ship[] --------------------------
+// Source : export communautaire (même feuille de calcul que
+// characters.csv), déjà en camelCase depuis extract-csv.ts (colonnes
+// positionnelles avec header multi-ligne, cf. POSITIONAL_SHEETS).
 
-// Colonnes non-numériques ou hors-stats de gameplay : exclues du sac `stats`.
-const UNIT_NON_STAT_COLUMNS = new Set([
-  "Id", "Name", "EncyclopediaDescription", "IsAlliance", "IsEmpire",
-  "RefinedMaterialCost", "MaintenanceCost",
-  "Field2_1", "ProductionFamily", "NextProductionFamily", "FamilyId",
-  "TextStraDllId", "Field7_2", "Field51_0",
-]);
+// Champs communs aux fiches "capacité de combat" issues du même
+// spreadsheet (ships, troops) : partagé plutôt que dupliqué par entité.
+const COMBAT_UNIT_NON_STAT_COLUMNS = new Set(["faction", "name", "cost", "maintenanceCost", "researchTier"]);
 
-function mapUnitFaction(row: RawRow): "empire" | "alliance" {
-  const isAlliance = row.IsAlliance === "1";
-  const isEmpire = row.IsEmpire === "1";
-  if (isAlliance && !isEmpire) return "alliance";
-  if (isEmpire && !isAlliance) return "empire";
-  // Ni l'un ni l'autre (ou les deux) : cas non observé dans les CSV réels
-  // disponibles (IsAlliance/IsEmpire toujours mutuellement exclusifs), mais
-  // on ne veut pas assigner silencieusement une faction arbitraire si ça
-  // change un jour côté source.
-  warn(`units.json — unité "${row.Id}" (${row.Name}) a IsAlliance="${row.IsAlliance}" et IsEmpire="${row.IsEmpire}" (ambigu) — faction défaultée à "empire"`);
+function mapFaction(entityLabel: string, row: RawRow): "empire" | "alliance" {
+  const normalized = row.faction.trim().toLowerCase();
+  if (normalized === "alliance") return "alliance";
+  if (normalized === "empire") return "empire";
+  warn(`${entityLabel} — "${row.name}" a une faction non reconnue : "${row.faction}" — défaultée à "empire"`);
   return "empire";
 }
 
-function mapUnits(rows: RawRow[]): Unit[] {
-  if (rows.length > 0) {
-    warn(`units.json — unlockedByResearch défaulté à null pour ${rows.length} unité(s) (pas d'ID de recherche référençable dans le CSV source, seulement un ordre numérique) ; category défaulté à "capital-ship" (seul CSV source disponible actuellement)`);
+function mapShipRow(row: RawRow, category: ShipCategory): Ship {
+  const stats: Record<string, number> = {};
+  for (const [key, value] of Object.entries(row)) {
+    if (COMBAT_UNIT_NON_STAT_COLUMNS.has(key)) continue;
+    const parsed = Number(value);
+    if (!Number.isNaN(parsed)) stats[key] = parsed;
   }
-  return rows.map((row): Unit => {
+  return {
+    id: slugify(row.name),
+    name: row.name,
+    faction: mapFaction("ships.json", row),
+    category,
+    cost: Number(row.cost) || 0,
+    maintenanceCost: Number(row.maintenanceCost) || 0,
+    unlockedByResearch: null,
+    stats,
+  };
+}
+
+function mapShips(capitalShipRows: RawRow[], fighterRows: RawRow[]): Ship[] {
+  const total = capitalShipRows.length + fighterRows.length;
+  if (total > 0) {
+    warn(`ships.json — unlockedByResearch défaulté à null pour ${total} vaisseau(x) (researchTier présent en source mais aucune entité de recherche référençable, gardé dans stats.researchTier)`);
+  }
+  const capitalShips = capitalShipRows.map((row) => mapShipRow(row, "capital-ship"));
+  const fighters = fighterRows.map((row) => mapShipRow(row, "fighter"));
+  return [...capitalShips, ...fighters];
+}
+
+// --- troops.csv -> Troop[] -------------------------------------------------
+
+function mapTroops(rows: RawRow[]): Troop[] {
+  if (rows.length > 0) {
+    warn(`troops.json — unlockedByResearch défaulté à null pour ${rows.length} troupe(s) (researchTier présent en source mais aucune entité de recherche référençable, gardé dans stats.researchTier)`);
+  }
+  return rows.map((row): Troop => {
     const stats: Record<string, number> = {};
     for (const [key, value] of Object.entries(row)) {
-      if (UNIT_NON_STAT_COLUMNS.has(key)) continue;
+      if (COMBAT_UNIT_NON_STAT_COLUMNS.has(key)) continue;
       const parsed = Number(value);
       if (!Number.isNaN(parsed)) stats[key] = parsed;
     }
     return {
-      id: row.Id,
-      name: row.Name,
-      faction: mapUnitFaction(row),
-      category: "capital-ship",
-      cost: Number(row.RefinedMaterialCost) || 0,
-      maintenanceCost: Number(row.MaintenanceCost) || 0,
+      id: slugify(row.name),
+      name: row.name,
+      faction: mapFaction("troops.json", row),
+      cost: Number(row.cost) || 0,
+      maintenanceCost: Number(row.maintenanceCost) || 0,
       unlockedByResearch: null,
       stats,
-      description: row.EncyclopediaDescription || undefined,
     };
   });
+}
+
+// --- special-forces.csv -> SpecialForce[] ---------------------------------
+// Pas de colonne Research dans cette source (contrairement aux autres
+// unités) : pas d'unlockedByResearch pour ces entités.
+
+function mapSpecialForces(rows: RawRow[]): SpecialForce[] {
+  return rows.map((row): SpecialForce => ({
+    id: slugify(row.name),
+    name: row.name,
+    faction: mapFaction("special-forces.json", row),
+    missions: row.missions.split(",").map((m) => m.trim()).filter(Boolean),
+    cost: Number(row.cost) || 0,
+    maintenanceCost: Number(row.maintenanceCost) || 0,
+    espionage: Number(row.espionage) || 0,
+    combat: Number(row.combat) || 0,
+    leadership: Number(row.leadership) || 0,
+  }));
 }
 
 // --- characters.csv -> Character[] -----------------------------------
@@ -163,14 +209,6 @@ function toBool(value: string): boolean {
   return TRUTHY.has((value ?? "").trim().toLowerCase());
 }
 
-function mapCharacterFaction(row: RawRow): "empire" | "alliance" {
-  const normalized = row.faction.trim().toLowerCase();
-  if (normalized === "alliance") return "alliance";
-  if (normalized === "empire") return "empire";
-  warn(`characters.json — personnage "${row.name}" a une faction non reconnue : "${row.faction}" — défaultée à "empire"`);
-  return "empire";
-}
-
 function mapCharacters(rows: RawRow[]): Character[] {
   const nonDerivableCapabilities: CharacterCapability[] = ["recruitment", "sabotage", "incite-uprising"];
   if (rows.length > 0) {
@@ -197,7 +235,7 @@ function mapCharacters(rows: RawRow[]): Character[] {
     return {
       id: slugify(row.name),
       name: row.name,
-      faction: mapCharacterFaction(row),
+      faction: mapFaction("characters.json", row),
       containerId: null,
       status: "stationed",
       canBetray: toBool(row.canBetray),
@@ -299,13 +337,14 @@ function checkReferences(
   planets: Planet[],
   sectors: Sector[],
   characters: Character[],
-  units: Unit[],
+  ships: Ship[],
+  troops: Troop[],
   installations: Installation[],
 ): string[] {
   const errors: string[] = [];
   const sectorIds = new Set(sectors.map((s) => s.id));
-  const containerIds = new Set([...planets.map((p) => p.id), ...units.map((u) => u.id)]);
-  const researchSourceIds = new Set([...units.map((u) => u.id), ...installations.map((i) => i.id)]);
+  const containerIds = new Set([...planets.map((p) => p.id), ...ships.map((s) => s.id)]);
+  const researchSourceIds = new Set([...ships.map((s) => s.id), ...troops.map((t) => t.id), ...installations.map((i) => i.id)]);
 
   for (const planet of planets) {
     if (!sectorIds.has(planet.sectorId)) {
@@ -317,9 +356,14 @@ function checkReferences(
       errors.push(`characters.json — personnage "${character.id}" référence un containerId inexistant : "${character.containerId}"`);
     }
   }
-  for (const unit of units) {
-    if (unit.unlockedByResearch !== null && !researchSourceIds.has(unit.unlockedByResearch)) {
-      errors.push(`units.json — unité "${unit.id}" référence un unlockedByResearch inexistant : "${unit.unlockedByResearch}"`);
+  for (const ship of ships) {
+    if (ship.unlockedByResearch !== null && !researchSourceIds.has(ship.unlockedByResearch)) {
+      errors.push(`ships.json — vaisseau "${ship.id}" référence un unlockedByResearch inexistant : "${ship.unlockedByResearch}"`);
+    }
+  }
+  for (const troop of troops) {
+    if (troop.unlockedByResearch !== null && !researchSourceIds.has(troop.unlockedByResearch)) {
+      errors.push(`troops.json — troupe "${troop.id}" référence un unlockedByResearch inexistant : "${troop.unlockedByResearch}"`);
     }
   }
   for (const installation of installations) {
@@ -339,7 +383,10 @@ function main(): void {
 
   const sectorRows = readRawRows(rawDir, "sectors.json");
   const systemRows = readRawRows(rawDir, "systems.json");
-  const unitRows = readRawRows(rawDir, "units.json");
+  const capitalShipRows = readRawRows(rawDir, "capital-ships.json");
+  const fighterRows = readRawRows(rawDir, "fighters.json");
+  const troopRows = readRawRows(rawDir, "troops.json");
+  const specialForceRows = readRawRows(rawDir, "special-forces.json");
   const characterRows = readRawRows(rawDir, "characters.json");
   const facilityRows = readRawRows(rawDir, "facilities.json");
   const defenseRows = readRawRows(rawDir, "defenses.json");
@@ -353,7 +400,9 @@ function main(): void {
 
   const sectors = mapSectors(sectorRows, systemsByPlanetSectorId);
   const planets = mapPlanets(systemRows);
-  const units = mapUnits(unitRows);
+  const ships = mapShips(capitalShipRows, fighterRows);
+  const troops = mapTroops(troopRows);
+  const specialForces = mapSpecialForces(specialForceRows);
   const characters = mapCharacters(characterRows);
   const installations = mapInstallations(facilityRows, defenseRows);
 
@@ -362,7 +411,9 @@ function main(): void {
     { name: "sectors.json", data: sectors, schema: SectorListSchema },
     { name: "planets.json", data: planets, schema: PlanetListSchema },
     { name: "characters.json", data: characters, schema: CharacterListSchema },
-    { name: "units.json", data: units, schema: UnitListSchema },
+    { name: "ships.json", data: ships, schema: ShipListSchema },
+    { name: "troops.json", data: troops, schema: TroopListSchema },
+    { name: "special-forces.json", data: specialForces, schema: SpecialForceListSchema },
     { name: "installations.json", data: installations, schema: InstallationListSchema },
   ];
 
@@ -378,7 +429,7 @@ function main(): void {
   }
 
   // Cohérence croisée entre entités (sectorId, containerId, unlockedByResearch).
-  const referenceErrors = checkReferences(planets, sectors, characters, units, installations);
+  const referenceErrors = checkReferences(planets, sectors, characters, ships, troops, installations);
   for (const error of referenceErrors) {
     console.error(`[build] ${error}`);
   }
