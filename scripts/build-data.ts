@@ -7,6 +7,7 @@ import {
   UnitListSchema,
   InstallationListSchema,
   type Sector,
+  type SectorSize,
   type Planet,
   type Character,
   type CharacterCapability,
@@ -41,24 +42,33 @@ function warn(message: string): void {
 
 // --- sectors.csv -> Sector[] -------------------------------------------
 
+function mapSectorSize(row: RawRow): SectorSize {
+  const normalized = row.GalaxySize.trim().toLowerCase();
+  if (normalized === "standard" || normalized === "large" || normalized === "huge") {
+    return normalized;
+  }
+  warn(`sectors.json — secteur "${row.Id}" a un GalaxySize non reconnu : "${row.GalaxySize}" — défaulté à "standard"`);
+  return "standard";
+}
+
 function mapSectors(rows: RawRow[], systemsByPlanetSectorId: Map<string, string[]>): Sector[] {
-  let missingAdjacency = 0;
-  const sectors = rows.map((row): Sector => {
+  if (rows.length > 0) {
+    warn(`sectors.json — adjacentSectorIds défaulté à [] pour ${rows.length} secteur(s) (donnée absente du CSV source)`);
+  }
+  return rows.map((row): Sector => {
     // "Group" (Core / Rim (inner) / Rim (outer)) est la colonne la plus
     // proche de la notion de bordure extérieure/intérieure du schéma cible.
     const type = row.Group === "Rim (outer)" ? "outer-rim" : "inner-rim";
-    missingAdjacency += 1;
     return {
       id: row.Id,
+      name: row.Name,
       type,
+      size: mapSectorSize(row),
+      position: { x: Number(row.XPosition), y: Number(row.YPosition) },
       systemIds: systemsByPlanetSectorId.get(row.Id) ?? [],
       adjacentSectorIds: [], // absent de l'export éditeur, cf. gap connu
     };
   });
-  if (missingAdjacency > 0) {
-    warn(`sectors.json — adjacentSectorIds défaulté à [] pour ${missingAdjacency} secteur(s) (donnée absente du CSV source)`);
-  }
-  return sectors;
 }
 
 // --- systems.csv -> Planet[] ---------------------------------------------
@@ -240,19 +250,35 @@ function mapFacilityCategory(name: string): InstallationCategory {
   return "production";
 }
 
+// Champs portés par des propriétés explicites du schéma : le reste des
+// colonnes numériques (Bombardment, Production Rate, Weapon Power,
+// Shield Strength, Research...) part dans `stats`, qui varie selon que
+// la ligne vient de facilities.csv ou defenses.csv.
+const INSTALLATION_NON_STAT_COLUMNS = new Set(["Type", "Const. Cost", "Maint. Cost"]);
+
 function mapInstallationRow(row: RawRow, category: InstallationCategory): Installation {
   const researchTier = Number(row.Research) || 0;
   if (researchTier > 0) {
-    warn(`installations.json — "${row.Type}" nécessite un palier de recherche ${researchTier} dans la source, non modélisé (pas d'entité de recherche) — unlockedByResearch défaulté à null`);
+    warn(`installations.json — "${row.Type}" nécessite un palier de recherche ${researchTier} dans la source, non modélisé (pas d'entité de recherche référençable) — unlockedByResearch défaulté à null, palier gardé dans stats.Research`);
   }
+
+  const stats: Record<string, number> = {};
+  for (const [key, value] of Object.entries(row)) {
+    if (INSTALLATION_NON_STAT_COLUMNS.has(key)) continue;
+    const parsed = Number(value);
+    if (!Number.isNaN(parsed)) stats[key] = parsed;
+  }
+
   return {
     id: slugify(row.Type),
     name: row.Type,
     category,
     cost: Number(row["Const. Cost"]) || 0,
+    maintenanceCost: Number(row["Maint. Cost"]) || 0,
     buildTimeInTurns: 1, // absent de la source, cf. warning global au build
     unlockedByResearch: null,
     isStartingInstallation: false, // absent de la source (relève d'un scénario), cf. warning global
+    stats,
   };
 }
 

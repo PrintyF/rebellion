@@ -9,9 +9,15 @@ export const InstallationSchema = z.object({
   name: z.string().min(1),
   category: InstallationCategorySchema,
   cost: z.number().nonnegative(),
+  maintenanceCost: z.number().nonnegative(),
   buildTimeInTurns: z.number().int().positive(),
   unlockedByResearch: z.string().min(1).nullable(),
   isStartingInstallation: z.boolean(),
+  // Bombardment, Production Rate, Weapon Power, Shield Strength... varient
+  // selon la catégorie (une facility de production n'a pas les mêmes
+  // stats qu'une défense) — même approche que UnitSchema.stats : sac
+  // générique plutôt qu'un schéma par catégorie.
+  stats: z.record(z.string(), z.number()),
   description: z.string().optional(),
 });
 export type Installation = z.infer<typeof InstallationSchema>;
