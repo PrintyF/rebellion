@@ -3,3 +3,10 @@ dist/
 .DS_Store
 *.log
 .env
+
+# Pipeline de données (US1.1/US1.2) : CSV sources (export externe de
+# StarWarsRebellionEditor.NET) et JSON brut intermédiaire, tous deux
+# régénérables via `npm run data:extract` / `npm run data:build`.
+# Seul src/data/*.json (sortie validée) est versionné.
+/data-source/
+/data-raw/
