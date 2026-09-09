@@ -13,9 +13,11 @@ export const InstallationSchema = z.object({
   buildTimeInTurns: z.number().int().positive(),
   unlockedByResearch: z.string().min(1).nullable(),
   isStartingInstallation: z.boolean(),
-  // Bombardment, Production Rate, Weapon Power, Shield Strength... varient
-  // selon la catégorie (une facility de production n'a pas les mêmes
-  // stats qu'une défense) — même approche que UnitSchema.stats : sac
+  // Bombardment (= résistance au bombardement, pas une attaque),
+  // Production Rate, Weapon Power, Shield Strength, Research (= ordre/
+  // palier de déblocage, pas une difficulté)... varient selon la
+  // catégorie (une facility de production n'a pas les mêmes stats
+  // qu'une défense) — même approche que UnitSchema.stats : sac
   // générique plutôt qu'un schéma par catégorie.
   stats: z.record(z.string(), z.number()),
   description: z.string().optional(),

@@ -224,11 +224,13 @@ function mapCharacters(rows: RawRow[]): Character[] {
 // Source : export communautaire (même feuille de calcul que
 // characters.csv). "Const. Cost" est un coût, pas une durée de
 // construction : buildTimeInTurns n'est pas dans la source (cf. warning).
-// "Research" (0 = disponible dès le départ, >0 = palier de recherche
-// requis) ne référence aucune entité de recherche modélisée pour l'instant
-// (même situation que unlockedByResearch sur units.json) : défaulté à
-// null, la valeur brute est mentionnée dans le warning plutôt que perdue
-// silencieusement.
+// "Bombardment" (dans stats) = résistance au bombardement de
+// l'installation, pas une valeur d'attaque (confirmé par l'utilisateur).
+// "Research" (0 = disponible dès le départ, >0 = palier/ordre de
+// déblocage — confirmé par l'utilisateur, pas une difficulté) ne
+// référence aucune entité de recherche modélisée pour l'instant (même
+// situation que unlockedByResearch sur units.json) : défaulté à null,
+// la valeur brute est gardée dans stats.Research plutôt que perdue.
 
 const PRODUCTION_FACILITY_NAMES = new Set([
   "construction facility",
