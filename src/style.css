@@ -125,3 +125,80 @@ button:hover {
   display: flex;
   gap: 0.75rem;
 }
+
+.load-game__empty {
+  color: #9aa3b5;
+  font-style: italic;
+}
+
+.save-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.save-list__item {
+  width: 100%;
+  text-align: left;
+}
+
+.save-list__item--selected {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.save-details {
+  border: 1px solid var(--panel);
+  border-radius: 4px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.save-details h2 {
+  margin-top: 0;
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+
+.save-details__actions,
+.save-details__rename-form {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.save-details__rename-form input {
+  flex: 1;
+  padding: 0.5rem;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+}
+
+.load-game__back {
+  margin-top: 0.5rem;
+}
+
+/* Supprimer une sauvegarde est destructif et immédiat (pas de confirmation) :
+   un signal de couleur distinct évite un clic accidentel au milieu d'actions
+   qui se ressemblent visuellement sinon. */
+.button--danger {
+  border-color: #e0555a;
+  color: #ffb3b6;
+}
+
+.button--danger:hover {
+  background: #e0555a;
+  color: var(--bg);
+}
+
+/* "Valider" (confirme le renommage) est mis en avant comme action principale
+   du formulaire pour ne pas être confondu avec "Annuler". */
+.button--primary {
+  background: var(--accent);
+  color: var(--bg);
+}
