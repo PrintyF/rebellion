@@ -46,3 +46,43 @@ button:hover {
   background: var(--accent);
   color: var(--bg);
 }
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+button:disabled:hover {
+  background: var(--panel);
+  color: var(--text);
+}
+
+fieldset {
+  border: 1px solid var(--panel);
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+legend {
+  color: var(--accent);
+  padding: 0 0.5rem;
+}
+
+.choice {
+  display: block;
+  padding: 0.5rem 0;
+  cursor: pointer;
+}
+
+.choice__description {
+  display: block;
+  margin-left: 1.5rem;
+  color: #9aa3b5;
+  font-size: 0.85rem;
+}
+
+.new-game__actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
