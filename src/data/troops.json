@@ -1,0 +1,142 @@
+[
+  {
+    "id": "alliance-fleet-regiment",
+    "name": "Alliance Fleet Regiment",
+    "faction": "alliance",
+    "cost": 8,
+    "maintenanceCost": 6,
+    "unlockedByResearch": null,
+    "stats": {
+      "attackRating": 6,
+      "defenseRating": 3,
+      "bombDefense": 5,
+      "detectionRating": 15
+    }
+  },
+  {
+    "id": "alliance-army-regiment",
+    "name": "Alliance Army Regiment",
+    "faction": "alliance",
+    "cost": 6,
+    "maintenanceCost": 3,
+    "unlockedByResearch": null,
+    "stats": {
+      "attackRating": 3,
+      "defenseRating": 5,
+      "bombDefense": 5,
+      "detectionRating": 10
+    }
+  },
+  {
+    "id": "sullustan-regiment",
+    "name": "Sullustan Regiment",
+    "faction": "alliance",
+    "cost": 3,
+    "maintenanceCost": 1,
+    "unlockedByResearch": null,
+    "stats": {
+      "attackRating": 1,
+      "defenseRating": 4,
+      "bombDefense": 2,
+      "detectionRating": 35
+    }
+  },
+  {
+    "id": "mon-calamari-regiment",
+    "name": "Mon Calamari Regiment",
+    "faction": "alliance",
+    "cost": 6,
+    "maintenanceCost": 4,
+    "unlockedByResearch": null,
+    "stats": {
+      "attackRating": 2,
+      "defenseRating": 8,
+      "bombDefense": 9,
+      "detectionRating": 20
+    }
+  },
+  {
+    "id": "wookiee-regiment",
+    "name": "Wookiee Regiment",
+    "faction": "alliance",
+    "cost": 10,
+    "maintenanceCost": 8,
+    "unlockedByResearch": null,
+    "stats": {
+      "attackRating": 8,
+      "defenseRating": 4,
+      "bombDefense": 4,
+      "detectionRating": 20
+    }
+  },
+  {
+    "id": "imperial-fleet-regiment",
+    "name": "Imperial Fleet Regiment",
+    "faction": "empire",
+    "cost": 7,
+    "maintenanceCost": 5,
+    "unlockedByResearch": null,
+    "stats": {
+      "attackRating": 5,
+      "defenseRating": 3,
+      "bombDefense": 2,
+      "detectionRating": 20
+    }
+  },
+  {
+    "id": "imperial-army-regiment",
+    "name": "Imperial Army Regiment",
+    "faction": "empire",
+    "cost": 6,
+    "maintenanceCost": 3,
+    "unlockedByResearch": null,
+    "stats": {
+      "attackRating": 3,
+      "defenseRating": 5,
+      "bombDefense": 5,
+      "detectionRating": 15
+    }
+  },
+  {
+    "id": "stormtrooper-regiment",
+    "name": "Stormtrooper Regiment",
+    "faction": "empire",
+    "cost": 9,
+    "maintenanceCost": 6,
+    "unlockedByResearch": null,
+    "stats": {
+      "attackRating": 6,
+      "defenseRating": 6,
+      "bombDefense": 6,
+      "detectionRating": 25
+    }
+  },
+  {
+    "id": "war-droid-regiment",
+    "name": "War Droid Regiment",
+    "faction": "empire",
+    "cost": 9,
+    "maintenanceCost": 8,
+    "unlockedByResearch": null,
+    "stats": {
+      "attackRating": 8,
+      "defenseRating": 2,
+      "bombDefense": 2,
+      "detectionRating": 5
+    }
+  },
+  {
+    "id": "dark-trooper-regiment",
+    "name": "Dark Trooper Regiment",
+    "faction": "empire",
+    "cost": 12,
+    "maintenanceCost": 8,
+    "unlockedByResearch": null,
+    "stats": {
+      "attackRating": 8,
+      "defenseRating": 8,
+      "bombDefense": 6,
+      "detectionRating": 30
+    }
+  }
+]

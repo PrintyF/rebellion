@@ -1,0 +1,114 @@
+[
+  {
+    "id": "guerrillas",
+    "name": "Guerrillas",
+    "faction": "alliance",
+    "missions": [
+      "Incite Uprising",
+      "Subdue Uprising"
+    ],
+    "cost": 1,
+    "maintenanceCost": 1,
+    "espionage": 55,
+    "combat": 20,
+    "leadership": 50
+  },
+  {
+    "id": "bothan-spies",
+    "name": "Bothan Spies",
+    "faction": "alliance",
+    "missions": [
+      "Espionage"
+    ],
+    "cost": 1,
+    "maintenanceCost": 1,
+    "espionage": 70,
+    "combat": 0,
+    "leadership": 0
+  },
+  {
+    "id": "longprobe-y-wing-recon-team",
+    "name": "Longprobe Y-Wing Recon Team",
+    "faction": "alliance",
+    "missions": [
+      "Reconnaissance"
+    ],
+    "cost": 2,
+    "maintenanceCost": 1,
+    "espionage": 40,
+    "combat": 30,
+    "leadership": 0
+  },
+  {
+    "id": "infiltrators",
+    "name": "Infiltrators",
+    "faction": "alliance",
+    "missions": [
+      "Abduction",
+      "Rescue",
+      "Sabotage",
+      "Death Star Sabotage"
+    ],
+    "cost": 2,
+    "maintenanceCost": 1,
+    "espionage": 60,
+    "combat": 55,
+    "leadership": 0
+  },
+  {
+    "id": "imperial-commandos",
+    "name": "Imperial Commandos",
+    "faction": "empire",
+    "missions": [
+      "Sabotage",
+      "Incite Uprising",
+      "Subdue Uprising"
+    ],
+    "cost": 2,
+    "maintenanceCost": 1,
+    "espionage": 55,
+    "combat": 55,
+    "leadership": 50
+  },
+  {
+    "id": "imperial-espionage-droid",
+    "name": "Imperial Espionage Droid",
+    "faction": "empire",
+    "missions": [
+      "Espionage"
+    ],
+    "cost": 1,
+    "maintenanceCost": 1,
+    "espionage": 60,
+    "combat": 5,
+    "leadership": 0
+  },
+  {
+    "id": "imperial-probe-droid",
+    "name": "Imperial Probe Droid",
+    "faction": "empire",
+    "missions": [
+      "Reconnaissance"
+    ],
+    "cost": 1,
+    "maintenanceCost": 1,
+    "espionage": 30,
+    "combat": 10,
+    "leadership": 0
+  },
+  {
+    "id": "noghri-death-commandos",
+    "name": "Noghri Death Commandos",
+    "faction": "empire",
+    "missions": [
+      "Abduction",
+      "Assassination",
+      "Rescue"
+    ],
+    "cost": 2,
+    "maintenanceCost": 1,
+    "espionage": 55,
+    "combat": 70,
+    "leadership": 0
+  }
+]
