@@ -13,18 +13,22 @@ import { parse } from "csv-parse/sync";
 interface EntityFileConfig {
   file: string;
   requiredColumns: readonly string[];
+  delimiter: string;
 }
 
 // Id/Name sont les deux seules colonnes garanties par l'export de l'éditeur
 // sur toutes les entités (vérifié sur les CSV réels disponibles :
-// systems-accurate.csv, sectors-accurate.csv, capitalships.csv). Le reste
-// des colonnes varie par entité et est laissé libre à ce stade.
+// systems-accurate.csv, sectors-accurate.csv, capitalships.csv), délimité
+// par ";". facilities.csv/defenses.csv viennent d'un export communautaire
+// (feuille de calcul, même source que characters.csv) : une seule colonne
+// "Type" garantie, délimité par "," (export CSV standard d'un tableur).
 const ENTITY_FILES: readonly EntityFileConfig[] = [
-  { file: "characters.csv", requiredColumns: ["Id", "Name"] },
-  { file: "units.csv", requiredColumns: ["Id", "Name"] },
-  { file: "buildings.csv", requiredColumns: ["Id", "Name"] },
-  { file: "systems.csv", requiredColumns: ["Id", "Name"] },
-  { file: "sectors.csv", requiredColumns: ["Id", "Name"] },
+  { file: "characters.csv", requiredColumns: ["Id", "Name"], delimiter: ";" },
+  { file: "units.csv", requiredColumns: ["Id", "Name"], delimiter: ";" },
+  { file: "facilities.csv", requiredColumns: ["Type"], delimiter: "," },
+  { file: "defenses.csv", requiredColumns: ["Type"], delimiter: "," },
+  { file: "systems.csv", requiredColumns: ["Id", "Name"], delimiter: ";" },
+  { file: "sectors.csv", requiredColumns: ["Id", "Name"], delimiter: ";" },
 ];
 
 interface ExtractSummary {
@@ -111,7 +115,7 @@ function extractCharactersFile(inputDir: string, file: string): { rows: Record<s
 }
 
 function extractFile(inputDir: string, config: EntityFileConfig): { rows: Record<string, string>[]; summary: ExtractSummary } {
-  const { file, requiredColumns } = config;
+  const { file, requiredColumns, delimiter } = config;
   const filePath = path.join(inputDir, file);
   const errors: string[] = [];
 
@@ -124,7 +128,7 @@ function extractFile(inputDir: string, config: EntityFileConfig): { rows: Record
   let records: Record<string, string>[];
   try {
     records = parse(content, {
-      delimiter: ";",
+      delimiter,
       columns: true,
       skip_empty_lines: true,
       relax_column_count: true,

@@ -12,6 +12,7 @@ import {
   type CharacterCapability,
   type Unit,
   type Installation,
+  type InstallationCategory,
 } from "../types/index.js";
 
 /**
@@ -209,8 +210,59 @@ function mapCharacters(rows: RawRow[]): Character[] {
   });
 }
 
-function mapInstallations(_rows: RawRow[]): Installation[] {
-  return [];
+// --- facilities.csv + defenses.csv -> Installation[] --------------------
+// Source : export communautaire (même feuille de calcul que
+// characters.csv). "Const. Cost" est un coût, pas une durée de
+// construction : buildTimeInTurns n'est pas dans la source (cf. warning).
+// "Research" (0 = disponible dès le départ, >0 = palier de recherche
+// requis) ne référence aucune entité de recherche modélisée pour l'instant
+// (même situation que unlockedByResearch sur units.json) : défaulté à
+// null, la valeur brute est mentionnée dans le warning plutôt que perdue
+// silencieusement.
+
+const PRODUCTION_FACILITY_NAMES = new Set([
+  "construction facility",
+  "advanced construction facility",
+  "training center",
+  "advanced training center",
+  "orbital shipyard",
+  "advanced orbital shipyard",
+]);
+const RESOURCE_FACILITY_NAMES = new Set(["mining facility", "refinery"]);
+
+function mapFacilityCategory(name: string): InstallationCategory {
+  const normalized = name.trim().toLowerCase();
+  if (RESOURCE_FACILITY_NAMES.has(normalized)) return "resources";
+  if (PRODUCTION_FACILITY_NAMES.has(normalized)) return "production";
+  // Type non reconnu dans les 8 noms de la source actuelle : on ne veut
+  // pas classer silencieusement une future installation inconnue.
+  warn(`installations.json — type de facility non reconnu : "${name}" — catégorie défaultée à "production"`);
+  return "production";
+}
+
+function mapInstallationRow(row: RawRow, category: InstallationCategory): Installation {
+  const researchTier = Number(row.Research) || 0;
+  if (researchTier > 0) {
+    warn(`installations.json — "${row.Type}" nécessite un palier de recherche ${researchTier} dans la source, non modélisé (pas d'entité de recherche) — unlockedByResearch défaulté à null`);
+  }
+  return {
+    id: slugify(row.Type),
+    name: row.Type,
+    category,
+    cost: Number(row["Const. Cost"]) || 0,
+    buildTimeInTurns: 1, // absent de la source, cf. warning global au build
+    unlockedByResearch: null,
+    isStartingInstallation: false, // absent de la source (relève d'un scénario), cf. warning global
+  };
+}
+
+function mapInstallations(facilityRows: RawRow[], defenseRows: RawRow[]): Installation[] {
+  if (facilityRows.length + defenseRows.length > 0) {
+    warn(`installations.json — buildTimeInTurns défaulté à 1 et isStartingInstallation à false pour ${facilityRows.length + defenseRows.length} installation(s) (absents de la source, relèvent respectivement d'un équilibrage à définir et d'un scénario/sauvegarde)`);
+  }
+  const facilities = facilityRows.map((row) => mapInstallationRow(row, mapFacilityCategory(row.Type)));
+  const defenses = defenseRows.map((row) => mapInstallationRow(row, "defense"));
+  return [...facilities, ...defenses];
 }
 
 // --- Cohérence croisée ---------------------------------------------------
@@ -261,7 +313,8 @@ function main(): void {
   const systemRows = readRawRows(rawDir, "systems.json");
   const unitRows = readRawRows(rawDir, "units.json");
   const characterRows = readRawRows(rawDir, "characters.json");
-  const buildingRows = readRawRows(rawDir, "buildings.json");
+  const facilityRows = readRawRows(rawDir, "facilities.json");
+  const defenseRows = readRawRows(rawDir, "defenses.json");
 
   const systemsByPlanetSectorId = new Map<string, string[]>();
   for (const row of systemRows) {
@@ -274,7 +327,7 @@ function main(): void {
   const planets = mapPlanets(systemRows);
   const units = mapUnits(unitRows);
   const characters = mapCharacters(characterRows);
-  const installations = mapInstallations(buildingRows);
+  const installations = mapInstallations(facilityRows, defenseRows);
 
   // Validation par schéma Zod (structure + unicité des IDs par fichier).
   const results = [

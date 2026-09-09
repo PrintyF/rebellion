@@ -1,1 +1,128 @@
-[]
+[
+  {
+    "id": "mining-facility",
+    "name": "Mining Facility",
+    "category": "resources",
+    "cost": 20,
+    "buildTimeInTurns": 1,
+    "unlockedByResearch": null,
+    "isStartingInstallation": false
+  },
+  {
+    "id": "refinery",
+    "name": "Refinery",
+    "category": "resources",
+    "cost": 20,
+    "buildTimeInTurns": 1,
+    "unlockedByResearch": null,
+    "isStartingInstallation": false
+  },
+  {
+    "id": "construction-facility",
+    "name": "Construction Facility",
+    "category": "production",
+    "cost": 10,
+    "buildTimeInTurns": 1,
+    "unlockedByResearch": null,
+    "isStartingInstallation": false
+  },
+  {
+    "id": "advanced-construction-facility",
+    "name": "Advanced Construction Facility",
+    "category": "production",
+    "cost": 10,
+    "buildTimeInTurns": 1,
+    "unlockedByResearch": null,
+    "isStartingInstallation": false
+  },
+  {
+    "id": "training-center",
+    "name": "Training Center",
+    "category": "production",
+    "cost": 10,
+    "buildTimeInTurns": 1,
+    "unlockedByResearch": null,
+    "isStartingInstallation": false
+  },
+  {
+    "id": "advanced-training-center",
+    "name": "Advanced Training Center",
+    "category": "production",
+    "cost": 10,
+    "buildTimeInTurns": 1,
+    "unlockedByResearch": null,
+    "isStartingInstallation": false
+  },
+  {
+    "id": "orbital-shipyard",
+    "name": "Orbital Shipyard",
+    "category": "production",
+    "cost": 20,
+    "buildTimeInTurns": 1,
+    "unlockedByResearch": null,
+    "isStartingInstallation": false
+  },
+  {
+    "id": "advanced-orbital-shipyard",
+    "name": "Advanced Orbital Shipyard",
+    "category": "production",
+    "cost": 20,
+    "buildTimeInTurns": 1,
+    "unlockedByResearch": null,
+    "isStartingInstallation": false
+  },
+  {
+    "id": "lnr-series-i",
+    "name": "LNR Series I",
+    "category": "defense",
+    "cost": 7,
+    "buildTimeInTurns": 1,
+    "unlockedByResearch": null,
+    "isStartingInstallation": false
+  },
+  {
+    "id": "lnr-series-ii",
+    "name": "LNR Series II",
+    "category": "defense",
+    "cost": 10,
+    "buildTimeInTurns": 1,
+    "unlockedByResearch": null,
+    "isStartingInstallation": false
+  },
+  {
+    "id": "gencore-level-i",
+    "name": "GenCore Level I",
+    "category": "defense",
+    "cost": 12,
+    "buildTimeInTurns": 1,
+    "unlockedByResearch": null,
+    "isStartingInstallation": false
+  },
+  {
+    "id": "gencore-level-ii",
+    "name": "GenCore Level II",
+    "category": "defense",
+    "cost": 20,
+    "buildTimeInTurns": 1,
+    "unlockedByResearch": null,
+    "isStartingInstallation": false
+  },
+  {
+    "id": "kdy-150",
+    "name": "KDY-150",
+    "category": "defense",
+    "cost": 4,
+    "buildTimeInTurns": 1,
+    "unlockedByResearch": null,
+    "isStartingInstallation": false
+  },
+  {
+    "id": "death-star-shield",
+    "name": "Death Star Shield",
+    "category": "defense",
+    "cost": 25,
+    "buildTimeInTurns": 1,
+    "unlockedByResearch": null,
+    "isStartingInstallation": false
+  }
+]
