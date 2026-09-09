@@ -1,8 +1,16 @@
-// Point d'entrée du jeu SW Rebellion Remake
-console.log("SW Rebellion Remake - démarrage");
+import "./style.css";
+import { registerScreen, initRouter } from "./router.js";
+import { renderMainMenu } from "./screens/mainMenu.js";
+import { renderLoadGame } from "./screens/loadGame.js";
+import { renderMultiplayer } from "./screens/multiplayer.js";
+import { renderQuit } from "./screens/quit.js";
+import { renderGalaxyMapPlaceholder } from "./screens/galaxyMapPlaceholder.js";
+
+registerScreen("main-menu", renderMainMenu);
+registerScreen("load-game", renderLoadGame);
+registerScreen("multiplayer", renderMultiplayer);
+registerScreen("quit", renderQuit);
+registerScreen("galaxy-map", renderGalaxyMapPlaceholder);
 
 const app = document.getElementById("app");
-app.innerHTML = `
-  <h1>SW Rebellion Remake</h1>
-  <p>Le projet démarre ici. Prochaine étape : carte galactique.</p>
-`;
+initRouter(app, "main-menu");

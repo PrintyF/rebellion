@@ -20,3 +20,108 @@ body {
 h1 {
   color: var(--accent);
 }
+
+.screen {
+  max-width: 40rem;
+}
+
+button {
+  padding: 0.75rem 1.25rem;
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.cockpit-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.panel-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.panel-row__label {
+  min-width: 9rem;
+  color: #9aa3b5;
+}
+
+.panel-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.panel-btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+.panel-btn--active {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.cockpit-menu__summary {
+  margin: 0;
+  color: #9aa3b5;
+  font-style: italic;
+}
+
+.faction-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.faction-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 1.5rem 1rem;
+  border-radius: 8px;
+  border: 2px solid var(--accent);
+}
+
+.faction-btn--alliance {
+  background: radial-gradient(circle, #1f3d1f, var(--panel));
+}
+
+.faction-btn--empire {
+  background: radial-gradient(circle, #3d1f1f, var(--panel));
+}
+
+.faction-btn__title {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.faction-btn__hint {
+  font-size: 0.8rem;
+  color: #9aa3b5;
+}
+
+/* Le clic (ou Entrée/Espace au clavier) sur un bouton faction lance la
+   partie immédiatement et sans confirmation — on renforce le focus clavier
+   ici pour éviter une activation accidentelle passée inaperçue. */
+.faction-btn:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.cockpit-menu__footer {
+  display: flex;
+  gap: 0.75rem;
+}
