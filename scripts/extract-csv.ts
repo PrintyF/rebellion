@@ -34,6 +34,82 @@ interface ExtractSummary {
   errorCount: number;
 }
 
+// characters.csv (export communautaire, pas encore l'export officiel de
+// l'éditeur — cf. conversation) a un header sur 2 lignes (catégorie +
+// sous-catégorie, cellules fusionnées côté tableur) au lieu du header
+// simple des autres fichiers. On le parse positionnellement plutôt
+// qu'avec `columns: true`, et on reconstitue la colonne Faction
+// (valeur uniquement sur la 1re ligne de chaque bloc faction, à
+// propager sur les lignes suivantes).
+const CHARACTERS_COLUMNS = [
+  "name", "faction", "canBetray",
+  "diplomacyBase", "diplomacyVariance",
+  "espionageBase", "espionageVariance",
+  "combatBase", "combatVariance",
+  "leadershipBase", "leadershipVariance",
+  "canBeAdmiral", "canBeCommander", "canBeGeneral",
+  "researchShipBase", "researchShipVariance",
+  "researchTroopBase", "researchTroopVariance",
+  "researchFacilityBase", "researchFacilityVariance",
+  "jediProbability", "jediLevelBase", "jediLevelVariance",
+  "jediKnown", "jediTrainer",
+] as const;
+
+function extractCharactersFile(inputDir: string, file: string): { rows: Record<string, string>[]; summary: ExtractSummary } {
+  const filePath = path.join(inputDir, file);
+  const errors: string[] = [];
+
+  if (!fs.existsSync(filePath)) {
+    console.error(`[extract] ${file} : fichier introuvable (${filePath}) — ignoré`);
+    return { rows: [], summary: { file, linesRead: 0, kept: 0, errorCount: 1 } };
+  }
+
+  const content = fs.readFileSync(filePath, "utf-8");
+  let records: string[][];
+  try {
+    records = parse(content, {
+      columns: false,
+      skip_empty_lines: true,
+      relax_column_count: true,
+      bom: true,
+    });
+  } catch (err) {
+    console.error(`[extract] ${file} : échec complet du parsing (${(err as Error).message}) — ignoré`);
+    return { rows: [], summary: { file, linesRead: 0, kept: 0, errorCount: 1 } };
+  }
+
+  const dataRows = records.slice(2); // 2 lignes de header (catégorie + sous-catégorie)
+  const rows: Record<string, string>[] = [];
+  let lastFaction = "";
+
+  dataRows.forEach((cols, index) => {
+    const lineNumber = index + 3;
+    const name = cols[0]?.trim();
+    if (!name) {
+      errors.push(`${file}:${lineNumber} — colonne manquante ou vide : name`);
+      return;
+    }
+    const faction = cols[1]?.trim() || lastFaction;
+    if (!faction) {
+      errors.push(`${file}:${lineNumber} — faction introuvable (ni sur cette ligne, ni sur une ligne précédente) pour "${name}"`);
+      return;
+    }
+    lastFaction = faction;
+
+    const row: Record<string, string> = { name, faction };
+    for (let i = 2; i < CHARACTERS_COLUMNS.length; i++) {
+      row[CHARACTERS_COLUMNS[i]] = cols[i] ?? "";
+    }
+    rows.push(row);
+  });
+
+  for (const error of errors) {
+    console.error(`[extract] ${error}`);
+  }
+
+  return { rows, summary: { file, linesRead: dataRows.length, kept: rows.length, errorCount: errors.length } };
+}
+
 function extractFile(inputDir: string, config: EntityFileConfig): { rows: Record<string, string>[]; summary: ExtractSummary } {
   const { file, requiredColumns } = config;
   const filePath = path.join(inputDir, file);
@@ -92,7 +168,9 @@ function main(): void {
   const summaries: ExtractSummary[] = [];
 
   for (const config of ENTITY_FILES) {
-    const { rows, summary } = extractFile(inputDir, config);
+    const { rows, summary } = config.file === "characters.csv"
+      ? extractCharactersFile(inputDir, config.file)
+      : extractFile(inputDir, config);
     const outputPath = path.join(outputDir, config.file.replace(/\.csv$/, ".json"));
     fs.writeFileSync(outputPath, JSON.stringify(rows, null, 2));
     summaries.push(summary);

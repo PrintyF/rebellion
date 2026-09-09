@@ -1,1 +1,3260 @@
-[]
+[
+  {
+    "id": "mon-mothma",
+    "name": "Mon Mothma",
+    "faction": "alliance",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": false,
+    "canBeAdmiral": false,
+    "canBeCommander": false,
+    "canBeGeneral": false,
+    "diplomacy": {
+      "min": 100,
+      "max": 100
+    },
+    "espionage": {
+      "min": 10,
+      "max": 10
+    },
+    "combat": {
+      "min": 10,
+      "max": 10
+    },
+    "leadership": {
+      "min": 100,
+      "max": 100
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 0,
+      "level": {
+        "min": 0,
+        "max": 0
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "leia-organa",
+    "name": "Leia Organa",
+    "faction": "alliance",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": false,
+    "canBeAdmiral": false,
+    "canBeCommander": false,
+    "canBeGeneral": false,
+    "diplomacy": {
+      "min": 120,
+      "max": 120
+    },
+    "espionage": {
+      "min": 30,
+      "max": 30
+    },
+    "combat": {
+      "min": 50,
+      "max": 50
+    },
+    "leadership": {
+      "min": 70,
+      "max": 70
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 100,
+      "level": {
+        "min": 10,
+        "max": 10
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "luke-skywalker",
+    "name": "Luke Skywalker",
+    "faction": "alliance",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": false,
+    "canBeAdmiral": true,
+    "canBeCommander": true,
+    "canBeGeneral": true,
+    "diplomacy": {
+      "min": 50,
+      "max": 50
+    },
+    "espionage": {
+      "min": 50,
+      "max": 50
+    },
+    "combat": {
+      "min": 90,
+      "max": 90
+    },
+    "leadership": {
+      "min": 70,
+      "max": 70
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 100,
+      "level": {
+        "min": 50,
+        "max": 50
+      },
+      "isKnown": true,
+      "isTrainer": true
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "han-solo",
+    "name": "Han Solo",
+    "faction": "alliance",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": false,
+    "canBeAdmiral": true,
+    "canBeCommander": true,
+    "canBeGeneral": true,
+    "diplomacy": {
+      "min": 10,
+      "max": 10
+    },
+    "espionage": {
+      "min": 100,
+      "max": 100
+    },
+    "combat": {
+      "min": 100,
+      "max": 100
+    },
+    "leadership": {
+      "min": 90,
+      "max": 90
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 0,
+      "level": {
+        "min": 0,
+        "max": 0
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "emperor-palpatine",
+    "name": "Emperor Palpatine",
+    "faction": "empire",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": false,
+    "canBeAdmiral": false,
+    "canBeCommander": false,
+    "canBeGeneral": false,
+    "diplomacy": {
+      "min": 30,
+      "max": 30
+    },
+    "espionage": {
+      "min": 20,
+      "max": 20
+    },
+    "combat": {
+      "min": 50,
+      "max": 50
+    },
+    "leadership": {
+      "min": 100,
+      "max": 100
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 100,
+      "level": {
+        "min": 150,
+        "max": 150
+      },
+      "isKnown": true,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "darth-vader",
+    "name": "Darth Vader",
+    "faction": "empire",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": false,
+    "canBeAdmiral": true,
+    "canBeCommander": true,
+    "canBeGeneral": true,
+    "diplomacy": {
+      "min": 40,
+      "max": 40
+    },
+    "espionage": {
+      "min": 50,
+      "max": 50
+    },
+    "combat": {
+      "min": 100,
+      "max": 100
+    },
+    "leadership": {
+      "min": 100,
+      "max": 100
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 100,
+      "level": {
+        "min": 120,
+        "max": 120
+      },
+      "isKnown": true,
+      "isTrainer": true
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "ackbar",
+    "name": "Ackbar",
+    "faction": "alliance",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": false,
+    "canBeAdmiral": true,
+    "canBeCommander": false,
+    "canBeGeneral": true,
+    "diplomacy": {
+      "min": 0,
+      "max": 30
+    },
+    "espionage": {
+      "min": 0,
+      "max": 50
+    },
+    "combat": {
+      "min": 0,
+      "max": 50
+    },
+    "leadership": {
+      "min": 90,
+      "max": 100
+    },
+    "research": {
+      "ship": {
+        "min": 40,
+        "max": 90
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 10,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage",
+      "naval-research"
+    ]
+  },
+  {
+    "id": "wedge-antilles",
+    "name": "Wedge Antilles",
+    "faction": "alliance",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": false,
+    "canBeAdmiral": true,
+    "canBeCommander": true,
+    "canBeGeneral": true,
+    "diplomacy": {
+      "min": 0,
+      "max": 30
+    },
+    "espionage": {
+      "min": 70,
+      "max": 170
+    },
+    "combat": {
+      "min": 70,
+      "max": 170
+    },
+    "leadership": {
+      "min": 80,
+      "max": 180
+    },
+    "research": {
+      "ship": {
+        "min": 40,
+        "max": 90
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 10,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage",
+      "naval-research"
+    ]
+  },
+  {
+    "id": "lando-calrissian",
+    "name": "Lando Calrissian",
+    "faction": "alliance",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": true,
+    "canBeCommander": true,
+    "canBeGeneral": true,
+    "diplomacy": {
+      "min": 70,
+      "max": 170
+    },
+    "espionage": {
+      "min": 70,
+      "max": 170
+    },
+    "combat": {
+      "min": 70,
+      "max": 170
+    },
+    "leadership": {
+      "min": 80,
+      "max": 180
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 40,
+        "max": 90
+      }
+    },
+    "jedi": {
+      "probability": 10,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage",
+      "installation-research"
+    ]
+  },
+  {
+    "id": "chewbacca",
+    "name": "Chewbacca",
+    "faction": "alliance",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": false,
+    "canBeAdmiral": false,
+    "canBeCommander": false,
+    "canBeGeneral": false,
+    "diplomacy": {
+      "min": 0,
+      "max": 30
+    },
+    "espionage": {
+      "min": 90,
+      "max": 190
+    },
+    "combat": {
+      "min": 90,
+      "max": 190
+    },
+    "leadership": {
+      "min": 0,
+      "max": 30
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 10,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "jan-dodonna",
+    "name": "Jan Dodonna",
+    "faction": "alliance",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": true,
+    "canBeCommander": false,
+    "canBeGeneral": true,
+    "diplomacy": {
+      "min": 70,
+      "max": 170
+    },
+    "espionage": {
+      "min": 0,
+      "max": 50
+    },
+    "combat": {
+      "min": 0,
+      "max": 50
+    },
+    "leadership": {
+      "min": 80,
+      "max": 180
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 10,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "crix-madine",
+    "name": "Crix Madine",
+    "faction": "alliance",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": false,
+    "canBeCommander": false,
+    "canBeGeneral": true,
+    "diplomacy": {
+      "min": 0,
+      "max": 30
+    },
+    "espionage": {
+      "min": 70,
+      "max": 170
+    },
+    "combat": {
+      "min": 70,
+      "max": 170
+    },
+    "leadership": {
+      "min": 80,
+      "max": 180
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 40,
+        "max": 90
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 20,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage",
+      "troop-research"
+    ]
+  },
+  {
+    "id": "carlist-rieekan",
+    "name": "Carlist Rieekan",
+    "faction": "alliance",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": false,
+    "canBeCommander": false,
+    "canBeGeneral": true,
+    "diplomacy": {
+      "min": 0,
+      "max": 30
+    },
+    "espionage": {
+      "min": 0,
+      "max": 50
+    },
+    "combat": {
+      "min": 0,
+      "max": 50
+    },
+    "leadership": {
+      "min": 80,
+      "max": 180
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 40,
+        "max": 90
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 20,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage",
+      "troop-research"
+    ]
+  },
+  {
+    "id": "afyon",
+    "name": "Afyon",
+    "faction": "alliance",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": true,
+    "canBeCommander": true,
+    "canBeGeneral": true,
+    "diplomacy": {
+      "min": 0,
+      "max": 30
+    },
+    "espionage": {
+      "min": 70,
+      "max": 170
+    },
+    "combat": {
+      "min": 70,
+      "max": 170
+    },
+    "leadership": {
+      "min": 80,
+      "max": 180
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 20,
+      "level": {
+        "min": 20,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "drayson",
+    "name": "Drayson",
+    "faction": "alliance",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": true,
+    "canBeCommander": false,
+    "canBeGeneral": true,
+    "diplomacy": {
+      "min": 70,
+      "max": 170
+    },
+    "espionage": {
+      "min": 0,
+      "max": 50
+    },
+    "combat": {
+      "min": 0,
+      "max": 50
+    },
+    "leadership": {
+      "min": 80,
+      "max": 180
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 20,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "borsk-fey-lya",
+    "name": "Borsk Fey'lya",
+    "faction": "alliance",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": false,
+    "canBeCommander": false,
+    "canBeGeneral": false,
+    "diplomacy": {
+      "min": 80,
+      "max": 180
+    },
+    "espionage": {
+      "min": 70,
+      "max": 170
+    },
+    "combat": {
+      "min": 70,
+      "max": 170
+    },
+    "leadership": {
+      "min": 0,
+      "max": 30
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 20,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "tura-raftican",
+    "name": "Tura Raftican",
+    "faction": "alliance",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": false,
+    "canBeCommander": false,
+    "canBeGeneral": false,
+    "diplomacy": {
+      "min": 0,
+      "max": 30
+    },
+    "espionage": {
+      "min": 90,
+      "max": 190
+    },
+    "combat": {
+      "min": 80,
+      "max": 180
+    },
+    "leadership": {
+      "min": 0,
+      "max": 30
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 20,
+      "level": {
+        "min": 20,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "bren-derlin",
+    "name": "Bren Derlin",
+    "faction": "alliance",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": false,
+    "canBeCommander": true,
+    "canBeGeneral": true,
+    "diplomacy": {
+      "min": 0,
+      "max": 30
+    },
+    "espionage": {
+      "min": 70,
+      "max": 170
+    },
+    "combat": {
+      "min": 70,
+      "max": 170
+    },
+    "leadership": {
+      "min": 80,
+      "max": 180
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 20,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "garm-bel-iblis",
+    "name": "Garm Bel Iblis",
+    "faction": "alliance",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": true,
+    "canBeCommander": false,
+    "canBeGeneral": true,
+    "diplomacy": {
+      "min": 0,
+      "max": 30
+    },
+    "espionage": {
+      "min": 80,
+      "max": 180
+    },
+    "combat": {
+      "min": 80,
+      "max": 180
+    },
+    "leadership": {
+      "min": 80,
+      "max": 180
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 20,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "talon-karrde",
+    "name": "Talon Karrde",
+    "faction": "alliance",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": true,
+    "canBeCommander": true,
+    "canBeGeneral": true,
+    "diplomacy": {
+      "min": 80,
+      "max": 180
+    },
+    "espionage": {
+      "min": 0,
+      "max": 50
+    },
+    "combat": {
+      "min": 0,
+      "max": 50
+    },
+    "leadership": {
+      "min": 80,
+      "max": 180
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 40,
+        "max": 90
+      }
+    },
+    "jedi": {
+      "probability": 20,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage",
+      "installation-research"
+    ]
+  },
+  {
+    "id": "narra",
+    "name": "Narra",
+    "faction": "alliance",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": false,
+    "canBeCommander": true,
+    "canBeGeneral": true,
+    "diplomacy": {
+      "min": 0,
+      "max": 30
+    },
+    "espionage": {
+      "min": 70,
+      "max": 170
+    },
+    "combat": {
+      "min": 70,
+      "max": 170
+    },
+    "leadership": {
+      "min": 80,
+      "max": 180
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 20,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "huoba-neva",
+    "name": "Huoba Neva",
+    "faction": "alliance",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": true,
+    "canBeCommander": false,
+    "canBeGeneral": true,
+    "diplomacy": {
+      "min": 0,
+      "max": 30
+    },
+    "espionage": {
+      "min": 80,
+      "max": 180
+    },
+    "combat": {
+      "min": 80,
+      "max": 180
+    },
+    "leadership": {
+      "min": 80,
+      "max": 180
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 20,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "page",
+    "name": "Page",
+    "faction": "alliance",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": false,
+    "canBeCommander": false,
+    "canBeGeneral": false,
+    "diplomacy": {
+      "min": 0,
+      "max": 30
+    },
+    "espionage": {
+      "min": 90,
+      "max": 190
+    },
+    "combat": {
+      "min": 90,
+      "max": 190
+    },
+    "leadership": {
+      "min": 0,
+      "max": 30
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 20,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "syub-snunb",
+    "name": "Syub Snunb",
+    "faction": "alliance",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": true,
+    "canBeCommander": true,
+    "canBeGeneral": false,
+    "diplomacy": {
+      "min": 0,
+      "max": 30
+    },
+    "espionage": {
+      "min": 70,
+      "max": 170
+    },
+    "combat": {
+      "min": 70,
+      "max": 170
+    },
+    "leadership": {
+      "min": 80,
+      "max": 180
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 20,
+      "level": {
+        "min": 30,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "adar-tallon",
+    "name": "Adar Tallon",
+    "faction": "alliance",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": true,
+    "canBeCommander": true,
+    "canBeGeneral": true,
+    "diplomacy": {
+      "min": 0,
+      "max": 30
+    },
+    "espionage": {
+      "min": 0,
+      "max": 50
+    },
+    "combat": {
+      "min": 0,
+      "max": 50
+    },
+    "leadership": {
+      "min": 90,
+      "max": 190
+    },
+    "research": {
+      "ship": {
+        "min": 40,
+        "max": 90
+      },
+      "troop": {
+        "min": 40,
+        "max": 90
+      },
+      "facility": {
+        "min": 40,
+        "max": 90
+      }
+    },
+    "jedi": {
+      "probability": 10,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage",
+      "naval-research",
+      "troop-research",
+      "installation-research"
+    ]
+  },
+  {
+    "id": "sarin-virgilio",
+    "name": "Sarin Virgilio",
+    "faction": "alliance",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": true,
+    "canBeCommander": false,
+    "canBeGeneral": true,
+    "diplomacy": {
+      "min": 0,
+      "max": 30
+    },
+    "espionage": {
+      "min": 70,
+      "max": 170
+    },
+    "combat": {
+      "min": 70,
+      "max": 170
+    },
+    "leadership": {
+      "min": 80,
+      "max": 180
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 20,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "vanden-willard",
+    "name": "Vanden Willard",
+    "faction": "alliance",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": true,
+    "canBeCommander": false,
+    "canBeGeneral": true,
+    "diplomacy": {
+      "min": 70,
+      "max": 170
+    },
+    "espionage": {
+      "min": 0,
+      "max": 50
+    },
+    "combat": {
+      "min": 0,
+      "max": 50
+    },
+    "leadership": {
+      "min": 80,
+      "max": 180
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 20,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "roget-jiriss",
+    "name": "Roget Jiriss",
+    "faction": "alliance",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": true,
+    "canBeCommander": true,
+    "canBeGeneral": false,
+    "diplomacy": {
+      "min": 0,
+      "max": 30
+    },
+    "espionage": {
+      "min": 80,
+      "max": 180
+    },
+    "combat": {
+      "min": 70,
+      "max": 170
+    },
+    "leadership": {
+      "min": 80,
+      "max": 180
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 20,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "kaiya-andrimetrum",
+    "name": "Kaiya Andrimetrum",
+    "faction": "alliance",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": false,
+    "canBeCommander": false,
+    "canBeGeneral": true,
+    "diplomacy": {
+      "min": 0,
+      "max": 30
+    },
+    "espionage": {
+      "min": 70,
+      "max": 170
+    },
+    "combat": {
+      "min": 70,
+      "max": 170
+    },
+    "leadership": {
+      "min": 90,
+      "max": 190
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 20,
+      "level": {
+        "min": 30,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "mazer-rackus",
+    "name": "Mazer Rackus",
+    "faction": "alliance",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": false,
+    "canBeCommander": false,
+    "canBeGeneral": false,
+    "diplomacy": {
+      "min": 0,
+      "max": 30
+    },
+    "espionage": {
+      "min": 80,
+      "max": 180
+    },
+    "combat": {
+      "min": 80,
+      "max": 180
+    },
+    "leadership": {
+      "min": 0,
+      "max": 30
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 20,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "orrimaarko",
+    "name": "Orrimaarko",
+    "faction": "alliance",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": false,
+    "canBeCommander": false,
+    "canBeGeneral": false,
+    "diplomacy": {
+      "min": 0,
+      "max": 30
+    },
+    "espionage": {
+      "min": 90,
+      "max": 190
+    },
+    "combat": {
+      "min": 80,
+      "max": 180
+    },
+    "leadership": {
+      "min": 0,
+      "max": 30
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 20,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "ma-w-shiye",
+    "name": "Ma'w'shiye",
+    "faction": "alliance",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": false,
+    "canBeCommander": false,
+    "canBeGeneral": false,
+    "diplomacy": {
+      "min": 0,
+      "max": 30
+    },
+    "espionage": {
+      "min": 90,
+      "max": 190
+    },
+    "combat": {
+      "min": 80,
+      "max": 180
+    },
+    "leadership": {
+      "min": 0,
+      "max": 30
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 20,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "jerjerrod",
+    "name": "Jerjerrod",
+    "faction": "empire",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": true,
+    "canBeCommander": true,
+    "canBeGeneral": true,
+    "diplomacy": {
+      "min": 70,
+      "max": 170
+    },
+    "espionage": {
+      "min": 0,
+      "max": 50
+    },
+    "combat": {
+      "min": 0,
+      "max": 50
+    },
+    "leadership": {
+      "min": 80,
+      "max": 180
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 10,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "ozzel",
+    "name": "Ozzel",
+    "faction": "empire",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": true,
+    "canBeCommander": false,
+    "canBeGeneral": true,
+    "diplomacy": {
+      "min": 0,
+      "max": 30
+    },
+    "espionage": {
+      "min": 70,
+      "max": 170
+    },
+    "combat": {
+      "min": 70,
+      "max": 170
+    },
+    "leadership": {
+      "min": 80,
+      "max": 180
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 10,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "piett",
+    "name": "Piett",
+    "faction": "empire",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": true,
+    "canBeCommander": true,
+    "canBeGeneral": true,
+    "diplomacy": {
+      "min": 70,
+      "max": 170
+    },
+    "espionage": {
+      "min": 0,
+      "max": 50
+    },
+    "combat": {
+      "min": 0,
+      "max": 50
+    },
+    "leadership": {
+      "min": 80,
+      "max": 180
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 10,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "veers",
+    "name": "Veers",
+    "faction": "empire",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": false,
+    "canBeCommander": false,
+    "canBeGeneral": true,
+    "diplomacy": {
+      "min": 0,
+      "max": 30
+    },
+    "espionage": {
+      "min": 0,
+      "max": 50
+    },
+    "combat": {
+      "min": 0,
+      "max": 50
+    },
+    "leadership": {
+      "min": 90,
+      "max": 190
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 40,
+        "max": 90
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 10,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage",
+      "troop-research"
+    ]
+  },
+  {
+    "id": "brandei",
+    "name": "Brandei",
+    "faction": "empire",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": true,
+    "canBeCommander": true,
+    "canBeGeneral": true,
+    "diplomacy": {
+      "min": 0,
+      "max": 30
+    },
+    "espionage": {
+      "min": 70,
+      "max": 170
+    },
+    "combat": {
+      "min": 70,
+      "max": 170
+    },
+    "leadership": {
+      "min": 80,
+      "max": 180
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 10,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "covell",
+    "name": "Covell",
+    "faction": "empire",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": false,
+    "canBeCommander": false,
+    "canBeGeneral": true,
+    "diplomacy": {
+      "min": 0,
+      "max": 30
+    },
+    "espionage": {
+      "min": 0,
+      "max": 50
+    },
+    "combat": {
+      "min": 0,
+      "max": 50
+    },
+    "leadership": {
+      "min": 80,
+      "max": 180
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 40,
+        "max": 90
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 10,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage",
+      "troop-research"
+    ]
+  },
+  {
+    "id": "dorja",
+    "name": "Dorja",
+    "faction": "empire",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": true,
+    "canBeCommander": true,
+    "canBeGeneral": true,
+    "diplomacy": {
+      "min": 0,
+      "max": 30
+    },
+    "espionage": {
+      "min": 70,
+      "max": 170
+    },
+    "combat": {
+      "min": 70,
+      "max": 170
+    },
+    "leadership": {
+      "min": 80,
+      "max": 180
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 10,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "bin-essada",
+    "name": "Bin Essada",
+    "faction": "empire",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": false,
+    "canBeCommander": false,
+    "canBeGeneral": false,
+    "diplomacy": {
+      "min": 70,
+      "max": 170
+    },
+    "espionage": {
+      "min": 0,
+      "max": 50
+    },
+    "combat": {
+      "min": 0,
+      "max": 50
+    },
+    "leadership": {
+      "min": 80,
+      "max": 180
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 10,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "niles-ferrier",
+    "name": "Niles Ferrier",
+    "faction": "empire",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": false,
+    "canBeCommander": false,
+    "canBeGeneral": false,
+    "diplomacy": {
+      "min": 0,
+      "max": 30
+    },
+    "espionage": {
+      "min": 80,
+      "max": 180
+    },
+    "combat": {
+      "min": 80,
+      "max": 180
+    },
+    "leadership": {
+      "min": 0,
+      "max": 30
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 20,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "grammel",
+    "name": "Grammel",
+    "faction": "empire",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": true,
+    "canBeCommander": true,
+    "canBeGeneral": true,
+    "diplomacy": {
+      "min": 0,
+      "max": 30
+    },
+    "espionage": {
+      "min": 70,
+      "max": 170
+    },
+    "combat": {
+      "min": 70,
+      "max": 170
+    },
+    "leadership": {
+      "min": 80,
+      "max": 180
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 10,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "griff",
+    "name": "Griff",
+    "faction": "empire",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": true,
+    "canBeCommander": false,
+    "canBeGeneral": true,
+    "diplomacy": {
+      "min": 0,
+      "max": 30
+    },
+    "espionage": {
+      "min": 70,
+      "max": 170
+    },
+    "combat": {
+      "min": 70,
+      "max": 170
+    },
+    "leadership": {
+      "min": 80,
+      "max": 180
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 10,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "klev",
+    "name": "Klev",
+    "faction": "empire",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": true,
+    "canBeCommander": false,
+    "canBeGeneral": true,
+    "diplomacy": {
+      "min": 0,
+      "max": 30
+    },
+    "espionage": {
+      "min": 0,
+      "max": 50
+    },
+    "combat": {
+      "min": 0,
+      "max": 50
+    },
+    "leadership": {
+      "min": 80,
+      "max": 180
+    },
+    "research": {
+      "ship": {
+        "min": 40,
+        "max": 90
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 10,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage",
+      "naval-research"
+    ]
+  },
+  {
+    "id": "needa",
+    "name": "Needa",
+    "faction": "empire",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": true,
+    "canBeCommander": true,
+    "canBeGeneral": true,
+    "diplomacy": {
+      "min": 0,
+      "max": 30
+    },
+    "espionage": {
+      "min": 70,
+      "max": 170
+    },
+    "combat": {
+      "min": 70,
+      "max": 170
+    },
+    "leadership": {
+      "min": 80,
+      "max": 180
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 10,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "bane-nothos",
+    "name": "Bane Nothos",
+    "faction": "empire",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": true,
+    "canBeCommander": true,
+    "canBeGeneral": true,
+    "diplomacy": {
+      "min": 0,
+      "max": 30
+    },
+    "espionage": {
+      "min": 70,
+      "max": 170
+    },
+    "combat": {
+      "min": 70,
+      "max": 170
+    },
+    "leadership": {
+      "min": 80,
+      "max": 180
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 10,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "orlok",
+    "name": "Orlok",
+    "faction": "empire",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": false,
+    "canBeCommander": false,
+    "canBeGeneral": true,
+    "diplomacy": {
+      "min": 0,
+      "max": 30
+    },
+    "espionage": {
+      "min": 0,
+      "max": 50
+    },
+    "combat": {
+      "min": 0,
+      "max": 50
+    },
+    "leadership": {
+      "min": 80,
+      "max": 180
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 40,
+        "max": 90
+      }
+    },
+    "jedi": {
+      "probability": 10,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage",
+      "installation-research"
+    ]
+  },
+  {
+    "id": "pellaeon",
+    "name": "Pellaeon",
+    "faction": "empire",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": true,
+    "canBeCommander": true,
+    "canBeGeneral": true,
+    "diplomacy": {
+      "min": 70,
+      "max": 170
+    },
+    "espionage": {
+      "min": 0,
+      "max": 50
+    },
+    "combat": {
+      "min": 0,
+      "max": 50
+    },
+    "leadership": {
+      "min": 80,
+      "max": 180
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 10,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "screed",
+    "name": "Screed",
+    "faction": "empire",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": true,
+    "canBeCommander": true,
+    "canBeGeneral": true,
+    "diplomacy": {
+      "min": 0,
+      "max": 30
+    },
+    "espionage": {
+      "min": 70,
+      "max": 170
+    },
+    "combat": {
+      "min": 70,
+      "max": 170
+    },
+    "leadership": {
+      "min": 90,
+      "max": 190
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 10,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "thrawn",
+    "name": "Thrawn",
+    "faction": "empire",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": true,
+    "canBeCommander": true,
+    "canBeGeneral": true,
+    "diplomacy": {
+      "min": 0,
+      "max": 30
+    },
+    "espionage": {
+      "min": 0,
+      "max": 50
+    },
+    "combat": {
+      "min": 70,
+      "max": 170
+    },
+    "leadership": {
+      "min": 100,
+      "max": 230
+    },
+    "research": {
+      "ship": {
+        "min": 40,
+        "max": 90
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 0,
+      "level": {
+        "min": 0,
+        "max": 0
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage",
+      "naval-research"
+    ]
+  },
+  {
+    "id": "zuggs",
+    "name": "Zuggs",
+    "faction": "empire",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": true,
+    "canBeCommander": true,
+    "canBeGeneral": true,
+    "diplomacy": {
+      "min": 0,
+      "max": 30
+    },
+    "espionage": {
+      "min": 70,
+      "max": 170
+    },
+    "combat": {
+      "min": 70,
+      "max": 170
+    },
+    "leadership": {
+      "min": 80,
+      "max": 180
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 10,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "daala",
+    "name": "Daala",
+    "faction": "empire",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": true,
+    "canBeCommander": true,
+    "canBeGeneral": true,
+    "diplomacy": {
+      "min": 0,
+      "max": 30
+    },
+    "espionage": {
+      "min": 70,
+      "max": 170
+    },
+    "combat": {
+      "min": 70,
+      "max": 170
+    },
+    "leadership": {
+      "min": 90,
+      "max": 190
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 10,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "pter-thanas",
+    "name": "Pter Thanas",
+    "faction": "empire",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": true,
+    "canBeCommander": true,
+    "canBeGeneral": true,
+    "diplomacy": {
+      "min": 70,
+      "max": 170
+    },
+    "espionage": {
+      "min": 0,
+      "max": 50
+    },
+    "combat": {
+      "min": 0,
+      "max": 50
+    },
+    "leadership": {
+      "min": 80,
+      "max": 180
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 10,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "bevel-lemelisk",
+    "name": "Bevel Lemelisk",
+    "faction": "empire",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": false,
+    "canBeCommander": false,
+    "canBeGeneral": false,
+    "diplomacy": {
+      "min": 0,
+      "max": 30
+    },
+    "espionage": {
+      "min": 0,
+      "max": 50
+    },
+    "combat": {
+      "min": 0,
+      "max": 50
+    },
+    "leadership": {
+      "min": 0,
+      "max": 30
+    },
+    "research": {
+      "ship": {
+        "min": 50,
+        "max": 100
+      },
+      "troop": {
+        "min": 50,
+        "max": 100
+      },
+      "facility": {
+        "min": 50,
+        "max": 100
+      }
+    },
+    "jedi": {
+      "probability": 10,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage",
+      "naval-research",
+      "troop-research",
+      "installation-research"
+    ]
+  },
+  {
+    "id": "shenir-rix",
+    "name": "Shenir Rix",
+    "faction": "empire",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": false,
+    "canBeCommander": false,
+    "canBeGeneral": false,
+    "diplomacy": {
+      "min": 0,
+      "max": 30
+    },
+    "espionage": {
+      "min": 90,
+      "max": 190
+    },
+    "combat": {
+      "min": 80,
+      "max": 180
+    },
+    "leadership": {
+      "min": 0,
+      "max": 30
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 10,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "noval-garaint",
+    "name": "Noval Garaint",
+    "faction": "empire",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": false,
+    "canBeCommander": false,
+    "canBeGeneral": false,
+    "diplomacy": {
+      "min": 0,
+      "max": 30
+    },
+    "espionage": {
+      "min": 90,
+      "max": 190
+    },
+    "combat": {
+      "min": 80,
+      "max": 180
+    },
+    "leadership": {
+      "min": 0,
+      "max": 30
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 10,
+      "level": {
+        "min": 30,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "garindan",
+    "name": "Garindan",
+    "faction": "empire",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": false,
+    "canBeCommander": false,
+    "canBeGeneral": false,
+    "diplomacy": {
+      "min": 0,
+      "max": 30
+    },
+    "espionage": {
+      "min": 80,
+      "max": 180
+    },
+    "combat": {
+      "min": 80,
+      "max": 180
+    },
+    "leadership": {
+      "min": 0,
+      "max": 30
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 10,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "menndo",
+    "name": "Menndo",
+    "faction": "empire",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": false,
+    "canBeCommander": false,
+    "canBeGeneral": false,
+    "diplomacy": {
+      "min": 0,
+      "max": 30
+    },
+    "espionage": {
+      "min": 80,
+      "max": 180
+    },
+    "combat": {
+      "min": 90,
+      "max": 190
+    },
+    "leadership": {
+      "min": 0,
+      "max": 30
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 10,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "labansat",
+    "name": "Labansat",
+    "faction": "empire",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": false,
+    "canBeCommander": false,
+    "canBeGeneral": false,
+    "diplomacy": {
+      "min": 0,
+      "max": 30
+    },
+    "espionage": {
+      "min": 80,
+      "max": 180
+    },
+    "combat": {
+      "min": 90,
+      "max": 190
+    },
+    "leadership": {
+      "min": 0,
+      "max": 30
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "jedi": {
+      "probability": 10,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage"
+    ]
+  },
+  {
+    "id": "villar",
+    "name": "Villar",
+    "faction": "empire",
+    "containerId": null,
+    "status": "stationed",
+    "canBetray": true,
+    "canBeAdmiral": false,
+    "canBeCommander": false,
+    "canBeGeneral": false,
+    "diplomacy": {
+      "min": 0,
+      "max": 30
+    },
+    "espionage": {
+      "min": 80,
+      "max": 180
+    },
+    "combat": {
+      "min": 70,
+      "max": 170
+    },
+    "leadership": {
+      "min": 0,
+      "max": 30
+    },
+    "research": {
+      "ship": {
+        "min": 0,
+        "max": 0
+      },
+      "troop": {
+        "min": 0,
+        "max": 0
+      },
+      "facility": {
+        "min": 40,
+        "max": 90
+      }
+    },
+    "jedi": {
+      "probability": 10,
+      "level": {
+        "min": 10,
+        "max": 50
+      },
+      "isKnown": false,
+      "isTrainer": false
+    },
+    "capabilities": [
+      "diplomacy",
+      "espionage",
+      "installation-research"
+    ]
+  }
+]

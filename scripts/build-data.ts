@@ -9,6 +9,7 @@ import {
   type Sector,
   type Planet,
   type Character,
+  type CharacterCapability,
   type Unit,
   type Installation,
 } from "../types/index.js";
@@ -124,13 +125,86 @@ function mapUnits(rows: RawRow[]): Unit[] {
   });
 }
 
-// --- characters.csv / buildings.csv -----------------------------------
-// Pas de CSV source réel disponible actuellement (nécessite l'éditeur
-// WinForms .NET, Windows-only). Le mapping produira un tableau vide tant
-// que ces fichiers ne sont pas fournis — voir CLAUDE.md / conversation.
+// --- characters.csv -> Character[] -----------------------------------
+// Source : export communautaire (feuille de calcul), pas encore l'export
+// officiel de l'éditeur .NET — cf. conversation. Colonnes Base/Variance
+// (malgré le libellé "Min/Max" de la feuille) : la plage réelle d'un jet
+// de compétence est [Base, Base + Variance].
 
-function mapCharacters(_rows: RawRow[]): Character[] {
-  return [];
+function slugify(name: string): string {
+  return name
+    .toLowerCase()
+    .normalize("NFD").replace(/[̀-ͯ]/g, "") // accents
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+function toRange(base: string, variance: string): { min: number; max: number } {
+  const b = Number(base) || 0;
+  const v = Number(variance) || 0;
+  return { min: b, max: b + v };
+}
+
+const TRUTHY = new Set(["true", "1", "yes"]);
+function toBool(value: string): boolean {
+  return TRUTHY.has((value ?? "").trim().toLowerCase());
+}
+
+function mapCharacterFaction(row: RawRow): "empire" | "alliance" {
+  const normalized = row.faction.trim().toLowerCase();
+  if (normalized === "alliance") return "alliance";
+  if (normalized === "empire") return "empire";
+  warn(`characters.json — personnage "${row.name}" a une faction non reconnue : "${row.faction}" — défaultée à "empire"`);
+  return "empire";
+}
+
+function mapCharacters(rows: RawRow[]): Character[] {
+  const nonDerivableCapabilities: CharacterCapability[] = ["recruitment", "sabotage", "incite-uprising"];
+  if (rows.length > 0) {
+    warn(`characters.json — containerId défaulté à null pour ${rows.length} personnage(s) (placement de départ absent de la source, relève d'un scénario/sauvegarde) ; capabilities [${nonDerivableCapabilities.join(", ")}] non dérivables de cette source (pas de colonne dédiée) et laissées vides`);
+  }
+  return rows.map((row): Character => {
+    const diplomacy = toRange(row.diplomacyBase, row.diplomacyVariance);
+    const espionage = toRange(row.espionageBase, row.espionageVariance);
+    const combat = toRange(row.combatBase, row.combatVariance);
+    const leadership = toRange(row.leadershipBase, row.leadershipVariance);
+    const research = {
+      ship: toRange(row.researchShipBase, row.researchShipVariance),
+      troop: toRange(row.researchTroopBase, row.researchTroopVariance),
+      facility: toRange(row.researchFacilityBase, row.researchFacilityVariance),
+    };
+
+    const capabilities: CharacterCapability[] = [];
+    if (diplomacy.max > 0) capabilities.push("diplomacy");
+    if (espionage.max > 0) capabilities.push("espionage");
+    if (research.ship.max > 0) capabilities.push("naval-research");
+    if (research.troop.max > 0) capabilities.push("troop-research");
+    if (research.facility.max > 0) capabilities.push("installation-research");
+
+    return {
+      id: slugify(row.name),
+      name: row.name,
+      faction: mapCharacterFaction(row),
+      containerId: null,
+      status: "stationed",
+      canBetray: toBool(row.canBetray),
+      canBeAdmiral: toBool(row.canBeAdmiral),
+      canBeCommander: toBool(row.canBeCommander),
+      canBeGeneral: toBool(row.canBeGeneral),
+      diplomacy,
+      espionage,
+      combat,
+      leadership,
+      research,
+      jedi: {
+        probability: Number(row.jediProbability) || 0,
+        level: toRange(row.jediLevelBase, row.jediLevelVariance),
+        isKnown: toBool(row.jediKnown),
+        isTrainer: toBool(row.jediTrainer),
+      },
+      capabilities,
+    };
+  });
 }
 
 function mapInstallations(_rows: RawRow[]): Installation[] {
@@ -157,7 +231,7 @@ function checkReferences(
     }
   }
   for (const character of characters) {
-    if (!containerIds.has(character.containerId)) {
+    if (character.containerId !== null && !containerIds.has(character.containerId)) {
       errors.push(`characters.json — personnage "${character.id}" référence un containerId inexistant : "${character.containerId}"`);
     }
   }
