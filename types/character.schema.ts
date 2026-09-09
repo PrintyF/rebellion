@@ -21,6 +21,9 @@ export type CharacterCapability = z.infer<typeof CharacterCapabilitySchema>;
 export const CharacterStatusSchema = z.enum(["stationed", "moving"]);
 export type CharacterStatus = z.infer<typeof CharacterStatusSchema>;
 
+// [min, max] est la plage dans laquelle la vraie valeur de la stat est
+// tirée aléatoirement UNE FOIS en début de partie (pas un jet par
+// mission/combat) — la valeur tirée reste fixe pour le reste de la partie.
 export const StatRangeSchema = z.object({
   min: z.number(),
   max: z.number(),

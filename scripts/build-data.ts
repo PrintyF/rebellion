@@ -128,8 +128,10 @@ function mapUnits(rows: RawRow[]): Unit[] {
 // --- characters.csv -> Character[] -----------------------------------
 // Source : export communautaire (feuille de calcul), pas encore l'export
 // officiel de l'éditeur .NET — cf. conversation. Colonnes Base/Variance
-// (malgré le libellé "Min/Max" de la feuille) : la plage réelle d'un jet
-// de compétence est [Base, Base + Variance].
+// (malgré le libellé "Min/Max" de la feuille) : [Base, Base + Variance]
+// est la plage dans laquelle la vraie valeur de la stat du personnage
+// est tirée aléatoirement UNE FOIS en début de partie (pas un jet par
+// mission) — la valeur tirée reste fixe pour toute la partie.
 
 function slugify(name: string): string {
   return name
