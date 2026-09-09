@@ -5,8 +5,8 @@ Snapshot local des issues GitHub du repo PrintyF/rebellion (toutes ouvertes au m
 **Ordre de traitement recommandé** (fondations avant systèmes avancés ; IA, sauvegarde, UX transverse et multijoueur en dernier car ils dépendent de tout le reste) :
 
 ## 1. EP1 — Extraction & modélisation des données
-- [ ] #1 — En tant que dev, je veux un script d'extraction des données de StarWarsRebellion
-- [ ] #2 — En tant que dev, je veux convertir l'export brut en JSON structuré et typé via d
+- [x] #1 — En tant que dev, je veux un script d'extraction des données de StarWarsRebellion
+- [x] #2 — En tant que dev, je veux convertir l'export brut en JSON structuré et typé via d
 
 ## 2. EP13 — Menu principal & lancement de partie
 - [ ] #3 — En tant que joueur, je veux un menu principal avec accès à la configuration de n
